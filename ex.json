@@ -1,0 +1,24 @@
+{
+  "produtos": [
+    {
+      "nome": "Hambúrguer",
+      "preco": 8.5,
+      "imagem": "require('./produtos/hamburguer.jpeg')"
+    },
+    {
+      "nome": "Hambúrguer",
+      "preco": 8.5,
+      "imagem": "require('./produtos/hamburguer.jpeg')"
+    },
+    {
+      "nome": "Hambúrguer",
+      "preco": 8.5,
+      "imagem": "require('./produtos/hamburguer.jpeg')"
+    },
+    {
+      "nome": "Hambúrguer",
+      "preco": 8.5,
+      "imagem": "require('./produtos/hamburguer.jpeg')"
+    }
+  ]
+}
