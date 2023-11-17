@@ -1,0 +1,43 @@
+const dados = { 'compras': ['fanta uva', 'toddy', 'pizza', 'pão de forma'] };
+let lista;
+$(() => {
+    let item = $("#txtItem");
+    lista = $("#lstCompras");
+
+    $("#btnAdicionar").on("click", () => {
+        dados.compras.push(item.value);
+        exibirArray();
+        item.val("");
+        item.trigger("focus");
+    });
+
+    $("#btnArray").on("click", () => {
+        exibirArray();
+    });
+
+    $("#btnSalvar").on("click", () => {
+        salvarArray();
+    });
+
+    $("#btnCarregar").on("click", () => {
+        carregarArray();
+    });
+
+});
+function carregarArray(){
+    dados.compras = localStorage.getItem('compras').split(',');
+}
+function salvarArray(){
+    localStorage.setItem('compras', dados.compras);
+}
+function exibirArray() {
+    lista.empty();
+    dados.compras.forEach(item => {
+        exibirItem(item);
+    });
+}
+function exibirItem(item) {
+    let tag = $("<li></li>");
+    tag.text(item);
+    lista.add(tag);
+}
