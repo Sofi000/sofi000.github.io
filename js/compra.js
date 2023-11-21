@@ -5,7 +5,7 @@ $(() => {
     lista = $("#lstCompras");
 
     $("#btnAdicionar").on("click", () => {
-        dados.compras.push(item.value);
+        dados.compras.push(item.val());
         exibirArray();
         item.val("");
         item.trigger("focus");
@@ -24,10 +24,11 @@ $(() => {
     });
 
 });
-function carregarArray(){
-    dados.compras = localStorage.getItem('compras').split(',');
+function carregarArray() {
+    if (localStorage.getItem('compras') != null)
+        dados.compras = localStorage.getItem('compras').split(',');
 }
-function salvarArray(){
+function salvarArray() {
     localStorage.setItem('compras', dados.compras);
 }
 function exibirArray() {
@@ -39,5 +40,5 @@ function exibirArray() {
 function exibirItem(item) {
     let tag = $("<li></li>");
     tag.text(item);
-    lista.add(tag);
+    lista.append(tag);
 }
