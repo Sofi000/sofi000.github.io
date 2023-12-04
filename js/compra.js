@@ -1,4 +1,4 @@
-const dados = { 'compras': ['fanta uva', 'toddy', 'pizza', 'pão de forma'] };
+const dados = { 'compras': [] };
 let lista;
 $(() => {
     let item = $("#txtItem");
